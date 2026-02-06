@@ -1,10 +1,12 @@
 import React from 'react'
 import heroImage from "../assets/hero-section-image.png"
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+    const navigate = useNavigate()
 
     const homeHandler = ()=> {
-
+        navigate("/products")
     }
     return (
         <div className='home-container'>
