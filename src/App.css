@@ -349,10 +349,79 @@ body {
   background: black;
 }
 
+/* ===================  HOW IT WORKS SECTION Css ================= */
 
-/* =========================
-RESPONSIVE
-========================= */
+.howitwork-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 60px 0 50px;
+  color: #111;
+}
+
+.howitwork-cards-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 25px;
+  padding: 0px 20px 20px 0;
+}
+
+.howitwork-card-one,
+.howitwork-card-two,
+.howitwork-card-three,
+.howitwork-card-four {
+  padding: 25px 30px;
+  border-radius: 14px;
+
+  /* glass effect */
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  transition: 0.3s ease;
+}
+
+.howitwork-card-one:hover,
+.howitwork-card-two:hover,
+.howitwork-card-three:hover,
+.howitwork-card-four:hover {
+  transform: translateY(-6px);
+}
+
+.howitwork-card-one h1,
+.howitwork-card-two h1,
+.howitwork-card-three h1,
+.howitwork-card-four h1 {
+  font-size: 1.5rem;
+  margin: 0; 
+  color: #111;
+}
+
+.howitwork-card-one p,
+.howitwork-card-two p,
+.howitwork-card-three p,
+.howitwork-card-four p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0; 
+}
+/* ================= Responsive ================== */
+
+@media (max-width: 899px) {
+  .howitwork-cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
@@ -364,10 +433,6 @@ RESPONSIVE
     grid-template-columns: 1fr;
   }
 }
-
-
-
-/* ================= Responsive ================== */
 
 @media (max-width: 900px) {
   .home-container {

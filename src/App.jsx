@@ -5,6 +5,7 @@ import "./App.css"
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Products from './Pages/Products'
+import HowItWorks from './Pages/HowItWorks'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/products' element={<Products/>}></Route>
+        <Route path='/howitworks' element={<HowItWorks/>}></Route>
       </Routes>
     </BrowserRouter>
   )
