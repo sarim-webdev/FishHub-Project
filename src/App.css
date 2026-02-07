@@ -195,7 +195,7 @@ body {
   from {
     transform: rotate(0deg);
   }
-  
+
   to {
     transform: rotate(360deg);
   }
@@ -230,7 +230,7 @@ body {
   color: #333;
 }
 
-.about-text button{
+.about-text button {
   margin-top: 20px;
   padding: 12px 24px;
   border: none;
@@ -255,7 +255,7 @@ body {
 }
 
 /* ================  Products Section Css  ================= */
-.products-title{
+.products-title {
   text-align: center;
   margin: 30px 0 5px 0;
   font-size: 2.4rem;
@@ -272,13 +272,13 @@ body {
 }
 
 .cards {
-  position: relative;   
+  position: relative;
   background: white;
   border-radius: 16px;
   overflow: hidden;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -301,7 +301,7 @@ body {
   left: 15px;
   width: calc(100% - 30px);
   height: 230px;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   display: flex;
   align-items: center;
@@ -316,7 +316,7 @@ body {
   transition: opacity 0.35s ease;
 }
 
-.cards img:hover + p {
+.cards img:hover+p {
   opacity: 1;
 }
 
@@ -351,6 +351,9 @@ body {
 
 /* ===================  HOW IT WORKS SECTION Css ================= */
 
+/* =========================
+TITLE
+========================= */
 .howitwork-title {
   text-align: center;
   font-size: 2.4rem;
@@ -359,68 +362,57 @@ body {
   color: #111;
 }
 
+
+/* =========================
+CONTAINER (CENTERED)
+========================= */
 .howitwork-cards-container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto;         
+  padding: 0 20px;       
   display: grid;
   gap: 25px;
-  padding: 0px 20px 20px 0;
 }
 
-.howitwork-card-one,
-.howitwork-card-two,
-.howitwork-card-three,
-.howitwork-card-four {
+.howitwork-card {
   padding: 25px 30px;
   border-radius: 14px;
-
-  /* glass effect */
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   display: flex;
-  flex-direction: column; 
-  gap: 15px;
+  flex-direction: column;   
+  gap: 12px;
   transition: 0.3s ease;
 }
 
-.howitwork-card-one:hover,
-.howitwork-card-two:hover,
-.howitwork-card-three:hover,
-.howitwork-card-four:hover {
+.howitwork-card:hover {
   transform: translateY(-6px);
 }
 
-.howitwork-card-one h1,
-.howitwork-card-two h1,
-.howitwork-card-three h1,
-.howitwork-card-four h1 {
-  font-size: 1.5rem;
-  margin: 0; 
+.howitwork-card h1 {
+  font-size: 1.4rem;
+  margin: 0;
   color: #111;
 }
 
-.howitwork-card-one p,
-.howitwork-card-two p,
-.howitwork-card-three p,
-.howitwork-card-four p {
+.howitwork-card p {
   line-height: 1.7;
   font-size: 0.95rem;
   color: #333;
-  margin: 0; 
+  margin: 0;
 }
-/* ================= Responsive ================== */
 
+
+/* ================ RESPONSIVE ================== */
 @media (max-width: 899px) {
   .howitwork-cards-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr;  
   }
 }
+
 
 @media (max-width: 1024px) {
   .cards-container {
@@ -443,31 +435,32 @@ body {
   .home-text h1 {
     font-size: 32px;
   }
-  
+
   .home-hero-image img {
     width: 300px;
   }
+
   .about-container {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
-  
+
   .about-text h2 {
     font-size: 30px;
   }
-  
+
   .about-text p {
     text-align: center;
   }
-  
+
   .about-image img {
     width: 320px;
   }
 }
 
 @media (max-width: 1180px) {
-  
+
   .menu-toggle {
     margin-left: auto;
     margin-right: 1rem;
