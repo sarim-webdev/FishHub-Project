@@ -657,6 +657,292 @@ CONTAINER (CENTERED)
   margin: 10px 0;
 }
 
+/* ================= Reviews Section Css ================= */
+.reviews-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.reviews-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.review-summary-box {
+  display: flex;
+  gap: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.summary-left {
+  text-align: center;
+  min-width: 180px;
+}
+
+.avg-number {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stars {
+  font-size: 20px;
+  color: #ffb400;
+}
+
+.summary-right {
+  flex: 1;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #ffb400;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.review-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ================= Top Products Section ================= */
+
+/* =============================
+   TOP PRODUCTS SECTION
+============================= */
+
+.top-products {
+  margin-top: 70px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.top-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: #111;
+}
+
+
+/* =============================
+   GRID LAYOUT
+============================= */
+
+.top-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+/* =============================
+   CARD
+============================= */
+
+.top-card {
+  padding: 35px 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+
+/* =============================
+   HOVER EFFECT
+   ============================= */
+   
+.top-card:hover {
+  transform: scale(1.05);
+  border: 2px solid #111;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+
+/* =============================
+NUMBER (Reviews count)
+============================= */
+
+.top-card h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #b58963;   /* premium gold look */
+  margin: 0;
+}
+
+
+/* =============================
+   FISH NAME
+============================= */
+
+.top-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.error {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.contact-btn {
+  padding: 15px;
+  background-color: #1e90ff;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #0d6efd;
+}
+
+.contact-info {
+  margin-top: 40px;
+  padding: 25px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border-radius: 12px;
+}
+
+.contact-info h3 {
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+
+
 /* ================ RESPONSIVE ================== */
 
 @media (max-width: 768px) {
@@ -678,6 +964,9 @@ CONTAINER (CENTERED)
   .checkout-grid {
     grid-template-columns: 1fr;
   }
+  .review-summary-box {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 899px) {
@@ -696,6 +985,13 @@ CONTAINER (CENTERED)
 @media (max-width: 600px) {
   .cards-container {
     grid-template-columns: 1fr;
+  }
+  .top-card {
+    padding: 25px 15px;
+  }
+  
+  .top-card h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -765,7 +1061,7 @@ CONTAINER (CENTERED)
 
   .nav-links a {
     background-color: #b58963;
-    border: 2px solid #111;
+    border: 2px solid#111;
     color: #111;
     padding: 5px 10px;
   }

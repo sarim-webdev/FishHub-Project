@@ -8,6 +8,8 @@ import Cart from './Pages/Cart'
 import { CartProvider } from './Context/CartContext'   
 import Checkout from './Pages/Checkout'
 import FAQS from './Pages/FAQS'
+import Reviews from './Pages/Reviews'
+import Contact from './Pages/Contact'
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path='/fqas' element={<FAQS/>} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/checkout' element={<Checkout/>} />
+          <Route path='/reviews' element={<Reviews/>} />
+          <Route path='/contact' element={<Contact/>} />
         </Routes>
       </BrowserRouter>
     </CartProvider>
