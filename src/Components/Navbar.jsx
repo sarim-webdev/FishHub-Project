@@ -32,8 +32,8 @@ const Navbar = () => {
         <li><Link to="/" onClick={closeMenu}>Home</Link></li>
         <li><Link to="/about" onClick={closeMenu}>About</Link></li>
         <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
-        <li><Link to="/cart" onClick={closeMenu}>Cart</Link></li>
         <li><Link to="/howitworks" onClick={closeMenu}>How It Works</Link></li>
+        <li><Link to="/cart" onClick={closeMenu}>Cart</Link></li>
         <li><Link to="/reviews" onClick={closeMenu}>Reviews</Link></li>
         <li><Link to="/checkout" onClick={closeMenu}>Checkout</Link></li>
         <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
