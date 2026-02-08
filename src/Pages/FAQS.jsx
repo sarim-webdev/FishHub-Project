@@ -1,9 +1,9 @@
 import React from 'react'
 
-const HowItWorks = () => {
+const FAQS = () => {
     return (
         <div>
-            <h1 className='howitwork-title'>How It Works – Fresh from Our Waters to Your Kitchen</h1>
+            <h1 className='howitwork-title'>FAQ'S – Fresh from Our Waters to Your Kitchen</h1>
             <div className="howitwork-cards-container">
                 <div className='howitwork-card'>
                     <h1>Carefully Sourced</h1>
@@ -42,4 +42,4 @@ const HowItWorks = () => {
     )
 }
 
-export default HowItWorks
+export default FAQS
