@@ -1,9 +1,23 @@
 import React from "react";
 import ProtectedCard from "../Data/ProtectedCard";
 import { useCart } from "../Context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAdd = (item) => {
+    const user = localStorage.getItem("loggedInUser");
+
+    if (!user) {
+      alert("Please login first!");
+      navigate("/login");
+      return;
+    }
+
+    addToCart(item);
+  };
 
   return (
     <div>
@@ -17,7 +31,7 @@ const Products = () => {
             <h3>{item.name}</h3>
             <h4>{item.price}</h4>
 
-            <button onClick={() => addToCart(item)}>
+            <button onClick={() => handleAdd(item)}>
               Add to Cart
             </button>
           </div>

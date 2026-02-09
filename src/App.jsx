@@ -10,6 +10,8 @@ import Checkout from './Pages/Checkout'
 import FAQS from './Pages/FAQS'
 import Reviews from './Pages/Reviews'
 import Contact from './Pages/Contact'
+import Login from './Pages/Auth/Login'
+import Signup from './Pages/Auth/Signup'
 
 const App = () => {
   return (
@@ -20,11 +22,13 @@ const App = () => {
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/products' element={<Products/>} />
-          <Route path='/fqas' element={<FAQS/>} />
+          <Route path='/faqs' element={<FAQS/>} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/reviews' element={<Reviews/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/signup' element={<Signup/>} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

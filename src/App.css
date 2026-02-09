@@ -65,14 +65,30 @@ body {
   font-weight: 600;
   border-radius: 6px;
   border: 2px solid transparent;
+  position: relative; 
   transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-  background-color: #b58963;
-  border: 2px solid #111;
-  color: #111;
-  transform: translateY(-4px);
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px; 
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 60%; 
+}
+
+.nav-links a.active {
+  color: #b58963;
 }
 
 .nav-actions {
@@ -118,6 +134,43 @@ body {
   transform: scale(1.04);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
+
+.logout-btn {
+  background: linear-gradient(135deg, #ff4d4f, #d9363e);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 77, 79, 0.45);
+}
+
+.logout-btn:active {
+  transform: scale(0.95);
+}
+
+.logout-btn {
+  animation: fadeInBtn 0.4s ease;
+}
+
+@keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .menu-toggle {
   display: none;
@@ -668,6 +721,7 @@ CONTAINER (CENTERED)
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
+  font-family: "Pacifico", cursive;
 }
 
 .review-summary-box {
@@ -678,14 +732,14 @@ CONTAINER (CENTERED)
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    margin-bottom: 50px;
-    flex-wrap: wrap;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .summary-left {
@@ -739,9 +793,9 @@ CONTAINER (CENTERED)
   padding: 20px;
   border-radius: 14px;
   
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   
     border: 1px solid rgba(255,255,255,0.3);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -759,12 +813,6 @@ CONTAINER (CENTERED)
   color: #444;
 }
 
-/* ================= Top Products Section ================= */
-
-/* =============================
-   TOP PRODUCTS SECTION
-============================= */
-
 .top-products {
   margin-top: 70px;
   text-align: center;
@@ -775,13 +823,9 @@ CONTAINER (CENTERED)
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 35px;
+  font-family: "Pacifico", cursive;
   color: #111;
 }
-
-
-/* =============================
-   GRID LAYOUT
-============================= */
 
 .top-grid {
   display: grid;
@@ -790,11 +834,6 @@ CONTAINER (CENTERED)
   max-width: 900px;
   margin: auto;
 }
-
-
-/* =============================
-   CARD
-============================= */
 
 .top-card {
   padding: 35px 20px;
@@ -812,11 +851,6 @@ CONTAINER (CENTERED)
   transition: 0.3s ease;
   cursor: pointer;
 }
-
-
-/* =============================
-   HOVER EFFECT
-   ============================= */
    
 .top-card:hover {
   transform: scale(1.05);
@@ -824,22 +858,12 @@ CONTAINER (CENTERED)
   box-shadow: 0 15px 35px rgba(0,0,0,0.18);
 }
 
-
-/* =============================
-NUMBER (Reviews count)
-============================= */
-
 .top-card h2 {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #b58963;   /* premium gold look */
+  color: #b58963;   
   margin: 0;
 }
-
-
-/* =============================
-   FISH NAME
-============================= */
 
 .top-card h4 {
   font-size: 1.1rem;
@@ -847,6 +871,8 @@ NUMBER (Reviews count)
   margin: 0;
   color: #333;
 }
+
+/* =========== Contact Section Css =========== */
 
 .contact-container {
   max-width: 800px;
@@ -857,6 +883,7 @@ NUMBER (Reviews count)
 
 .contact-container h1 {
   text-align: center;
+  font-family: "Pacifico", cursive;
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
@@ -940,6 +967,102 @@ textarea {
   margin: 5px 0;
   font-weight: 500;
 }
+
+/* ========= Auth Section Css ========= */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.auth-card {
+  width: 360px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.auth-card h1 {
+  margin-bottom: 25px;
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  font-size: 15px;
+
+  background: rgba(255,255,255,0.85);
+  transition: 0.3s;
+}
+
+.auth-card input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 2px #b58963;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #111;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.auth-card p {
+  margin-top: 15px;
+  color: white;
+}
+
+.auth-card a {
+  color: blue;
+  font-weight: 600;
+}
+
+.auth-card .error {
+  color: #ff4d4f;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
@@ -1030,48 +1153,50 @@ textarea {
 
 @media (max-width: 1180px) {
 
-  .menu-toggle {
-    margin-left: auto;
-    margin-right: 1rem;
-    display: block;
-  }
-
   .nav-links {
     position: fixed;
-    top: 80px;
+    top: 80px; /* navbar height */
     left: 0;
-    width: 260px;
+    width: 100%; /* full width */
     height: calc(100vh - 80px);
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-right: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    background: #111; /* black background */
     flex-direction: column;
-    gap: 20px;
-    padding: 25px 0;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
     transform: translateX(-100%);
-    transition: transform 0.35s ease;
-    display: flex;
+    transition: transform 0.3s ease;
+    z-index: 9998;
+    overflow-y: auto;
   }
 
   .nav-links.active {
     transform: translateX(0);
   }
-
+  
   .nav-links a {
-    background-color: #b58963;
-    border: 2px solid#111;
-    color: #111;
-    padding: 5px 10px;
+    width: 100%; /* full width link */
+    padding: 12px 20px;
+    color: #b58963; /* link color */
+    font-size: 1.1rem;
+    border-radius: 0;
+    display: block;
+    text-align: left;
+  }
+  
+  .nav-links a.active::after {
+    display: none; /* hide underline in mobile */
   }
 
-  .nav-links .nav-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+  .nav-links a::after {
+    background-color: #b58963;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.9rem;
+    z-index: 9999;
   }
 
   .nav-links .login-btn,
