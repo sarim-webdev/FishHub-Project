@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation(); 
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
-  /* =====================
-     CHECK LOGIN STATE
-  ===================== */
   const checkLogin = () => {
     const logged = localStorage.getItem("loggedInUser");
     setUser(logged ? JSON.parse(logged) : null);
@@ -16,19 +14,17 @@ const Navbar = () => {
 
   useEffect(() => {
     checkLogin();
-
-    // ⭐ listen for localStorage change (login/logout instantly update)
     window.addEventListener("storage", checkLogin);
-
     return () => window.removeEventListener("storage", checkLogin);
   }, []);
 
-  /* =====================
-     LOGOUT
-  ===================== */
+  useEffect(() => {
+    checkLogin();
+  }, [location]);
+
   const logoutHandler = () => {
     localStorage.removeItem("loggedInUser");
-    setUser(null); // instant update
+    setUser(null);
     navigate("/products");
   };
 
@@ -64,8 +60,7 @@ const Navbar = () => {
         <li><Link to="/reviews" onClick={closeMenu}>Reviews</Link></li>
         <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
       </ul>
-
-      {/* ================= ACTION BUTTONS ================= */}
+      
       <div className="nav-actions">
         {user ? (
           <button className="logout-btn" onClick={logoutHandler}>

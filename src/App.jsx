@@ -12,6 +12,7 @@ import Reviews from './Pages/Reviews'
 import Contact from './Pages/Contact'
 import Login from './Pages/Auth/Login'
 import Signup from './Pages/Auth/Signup'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CartProvider>
   )
