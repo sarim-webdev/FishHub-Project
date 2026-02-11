@@ -175,7 +175,7 @@ body {
 .menu-toggle {
   display: none;
   font-size: 28px;
-  color: white;
+  color: #111;
   cursor: pointer;
 }
 
@@ -1248,11 +1248,11 @@ textarea {
 
   .nav-links {
     position: fixed;
-    top: 80px; /* navbar height */
+    top: 80px;
     left: 0;
-    width: 100%; /* full width */
+    width: 100%; 
     height: calc(100vh - 80px);
-    background: #111; /* black background */
+    background: #111; 
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
@@ -1268,9 +1268,9 @@ textarea {
   }
   
   .nav-links a {
-    width: 100%; /* full width link */
+    width: 100%; 
     padding: 12px 20px;
-    color: #b58963; /* link color */
+    color: #b58963; 
     font-size: 1.1rem;
     border-radius: 0;
     display: block;
@@ -1278,13 +1278,13 @@ textarea {
   }
   
   .nav-links a.active::after {
-    display: none; /* hide underline in mobile */
+    display: none;
   }
 
   .nav-links a::after {
     background-color: #b58963;
   }
-
+  
   .menu-toggle {
     display: block;
     cursor: pointer;
@@ -1296,5 +1296,75 @@ textarea {
   .nav-links .signup-btn {
     width: 80%;
     text-align: center;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .navbar {
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .logo h2 {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 25px;
+    color: #111;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: black;
+    display: none;
+    padding: 10px 0;
+    gap: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .login-btn,
+  .signup-btn,
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 14px 20px;
+    color: #b58963;
+    border-bottom: 2px solid rgba(181, 137, 99, 0.3);
+  }
+
+  .nav-links a::after {
+    display: none;
   }
 }
