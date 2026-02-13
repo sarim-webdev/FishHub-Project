@@ -37,7 +37,21 @@ body {
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-100%);
+  animation: slideDownNavbar 0.8s ease forwards;
 }
+
+@keyframes slideDownNavbar {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 .logo h2 {
   font-family: "Pacifico", cursive;
@@ -174,10 +188,22 @@ body {
 
 .menu-toggle {
   display: none;
-  font-size: 28px;
+  font-size: 19px;
   color: #111;
   cursor: pointer;
+  border: 2px solid #111;
+  padding: 0px 5px;
+  border-radius: 6px;
+  margin-left: 10px;
+  transition: all 0.3s ease;
 }
+
+.menu-toggle:hover {
+  background: #b58963;
+  color: white;
+  border-color: white;
+}
+
 
 /* ================ HOME HERO SECTION Css ============== */
 .home-container {
@@ -1120,22 +1146,23 @@ textarea {
   padding-left: 5px;
 }
 
-.socials {
-  margin-top: 12px;
+.social-icons {
+  margin-top: 10px;
   display: flex;
-  gap: 12px;
-  font-size: 20px;
-  cursor: pointer;
+  gap: 15px;
 }
 
-.socials span {
-  transition: 0.3s;
-}
-
-.socials span:hover {
-  transform: translateY(-4px);
+.social-icons a {
   color: #b58963;
+  font-size: 25px;
+  transition: all 0.3s ease;
 }
+
+.social-icons a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
 
 .footer-bottom {
   text-align: center;
@@ -1300,7 +1327,7 @@ textarea {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 445px) {
 
   .navbar {
     height: 60px;
@@ -1313,8 +1340,9 @@ textarea {
 
   .menu-toggle {
     display: block;
-    font-size: 25px;
+    font-size: 20px;
     color: #111;
+
   }
 
   .nav-links {

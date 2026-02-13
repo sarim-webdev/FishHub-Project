@@ -52,7 +52,7 @@ const Checkout = () => {
       return;
     }
 
-    alert("Order placed successfully ✅");
+    alert("Order placed successfully");
     clearCart();
   };
 

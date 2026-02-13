@@ -3,7 +3,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -45,11 +45,6 @@ const Navbar = () => {
       <div className="logo">
         <h2>FishHub</h2>
       </div>
-
-      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
-
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
         <li><Link to="/" onClick={closeMenu}>Home</Link></li>
         <li><Link to="/about" onClick={closeMenu}>About</Link></li>
@@ -60,7 +55,6 @@ const Navbar = () => {
         <li><Link to="/reviews" onClick={closeMenu}>Reviews</Link></li>
         <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
       </ul>
-      
       <div className="nav-actions">
         {user ? (
           <button className="logout-btn" onClick={logoutHandler}>
@@ -76,8 +70,15 @@ const Navbar = () => {
             </button>
           </>
         )}
+        <div
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </div>
       </div>
     </nav>
+
   );
 };
 

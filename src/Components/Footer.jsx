@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -11,7 +12,22 @@ const Footer = () => {
             Fresh seafood delivered to your doorstep.  
             Premium quality, hygienic packaging and fast delivery.
           </p>
+          <div className="social-icons">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noreferrer">
+              <FaTiktok />
+            </a>
+            <a href="https://wa.me/923170508010" target="_blank" rel="noreferrer">
+              <FaWhatsapp />
+            </a>
+          </div>
         </div>
+
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
@@ -22,6 +38,7 @@ const Footer = () => {
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
+
         <div className="footer-section">
           <h3>Support</h3>
           <ul>
@@ -30,19 +47,15 @@ const Footer = () => {
             <li><Link to="/checkout">Checkout</Link></li>
           </ul>
         </div>
+
         <div className="footer-section">
           <h3>Contact Info</h3>
           <p>📞 +92 317 0508010</p>
           <p>📧 muhammadsarim1861@gmail.com</p>
           <p>📍 Karachi, Pakistan</p>
-          <div className="socials">
-            <span>🌐</span>
-            <span>📘</span>
-            <span>📸</span>
-            <span>🐦</span>
-          </div>
         </div>
       </div>
+
       <div className="footer-bottom">
         © {new Date().getFullYear()} FishHub. All rights reserved.
       </div>
