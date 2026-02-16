@@ -19,6 +19,21 @@ body {
   padding-top: 70px;
 }
 
+html, body {
+  font-family: "Poppins", sans-serif;
+  color: #111;
+  min-height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #c8a27a,
+    #c8a27a 40px,
+    #b58963 40px,
+    #b58963 80px
+  );
+  background-size: cover;
+  background-position: center;
+}
+
 /* ============== Navbar Css =============== */
 
 .navbar {
@@ -690,7 +705,6 @@ body {
   gap: 20px;
 }
 
-/* Online Payment Cards Container */
 .online-cards {
   display: flex;
   gap: 20px;
@@ -698,7 +712,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Single Payment Card */
 .online-card {
   flex: 1;
   min-width: 140px;
@@ -715,33 +728,37 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
-/* Hover Effect */
 .online-card:hover {
   transform: translateY(-5px);
   border-color: #b58963;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Active Selected Card */
 .online-card.active {
   border-color: #b58963;
   background: #fff8f1;
   box-shadow: 0 6px 16px rgba(181, 137, 99, 0.25);
 }
 
-/* Logo Image */
 .online-card img {
   width: 80px;
   height: 80px;
   object-fit: contain;
 }
 
-/* Text */
 .online-card span {
   margin-top: 10px;
   font-weight: 600;
   font-size: 14px;
   color: #333;
+}
+
+.place-order{
+  padding: 8px 6px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e90ff;
+  font-size: 16px;
 }
 
 
