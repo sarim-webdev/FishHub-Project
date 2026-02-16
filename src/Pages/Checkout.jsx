@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCart } from "../Context/CartContext";
-import { useNavigate } from "react-router-dom";
+import { FaCreditCard, FaMobileAlt } from "react-icons/fa";
 
 const Checkout = () => {
   const { cart, total, clearCart } = useCart();
@@ -22,6 +22,10 @@ const Checkout = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const selectOnlineMethod = (method) => {
+    setForm({ ...form, onlineMethod: method });
+  };
+
   const placeOrder = () => {
     if (!form.name || !form.phone || !form.address || cart.length === 0) {
       alert("Please fill all fields and add items to cart");
@@ -29,14 +33,13 @@ const Checkout = () => {
     }
 
     if (form.payment === "Online" && !form.onlineMethod) {
-      alert("Please select online payment method");
+      alert("Please select an online payment method");
       return;
     }
 
     if (
       form.payment === "Online" &&
-      (form.onlineMethod === "JazzCash" ||
-        form.onlineMethod === "Easypaisa") &&
+      (form.onlineMethod === "JazzCash" || form.onlineMethod === "Easypaisa") &&
       !form.accountNumber
     ) {
       alert("Please enter account number");
@@ -52,7 +55,7 @@ const Checkout = () => {
       return;
     }
 
-    alert("Order placed successfully");
+    alert("Order placed successfully ✅");
     clearCart();
   };
 
@@ -63,7 +66,6 @@ const Checkout = () => {
       <div className="checkout-grid">
         <div className="checkout-form">
           <h2>Customer Details</h2>
-
           <input name="name" placeholder="Full Name" onChange={handleChange} />
           <input name="phone" placeholder="Phone Number" onChange={handleChange} />
           <textarea name="address" placeholder="Delivery Address" onChange={handleChange} />
@@ -95,26 +97,36 @@ const Checkout = () => {
             </label>
           </div>
 
-          {/* ================= ONLINE OPTIONS ================= */}
-
           {form.payment === "Online" && (
             <>
               <h4>Select Online Method</h4>
+              <div className="online-cards">
+                <div
+                  className={`online-card ${form.onlineMethod === "JazzCash" ? "active" : ""}`}
+                  onClick={() => selectOnlineMethod("JazzCash")}
+                >
+                  <FaMobileAlt size={30} color="#ff3d00" />
+                  <span>JazzCash</span>
+                </div>
 
-              <select
-                name="onlineMethod"
-                value={form.onlineMethod}
-                onChange={handleChange}
-              >
-                <option value="">Select Method</option>
-                <option value="JazzCash">JazzCash</option>
-                <option value="Easypaisa">Easypaisa</option>
-                <option value="Card">Credit / Debit Card</option>
-              </select>
+                <div
+                  className={`online-card ${form.onlineMethod === "Easypaisa" ? "active" : ""}`}
+                  onClick={() => selectOnlineMethod("Easypaisa")}
+                >
+                  <FaMobileAlt size={30} color="#00c853" />
+                  <span>Easypaisa</span>
+                </div>
 
-              {/* JazzCash / Easypaisa */}
-              {(form.onlineMethod === "JazzCash" ||
-                form.onlineMethod === "Easypaisa") && (
+                <div
+                  className={`online-card ${form.onlineMethod === "Card" ? "active" : ""}`}
+                  onClick={() => selectOnlineMethod("Card")}
+                >
+                  <FaCreditCard size={30} color="#2962ff" />
+                  <span>Credit / Debit Card</span>
+                </div>
+              </div>
+
+              {["JazzCash", "Easypaisa"].includes(form.onlineMethod) && (
                 <input
                   name="accountNumber"
                   placeholder="Enter Account Number"
@@ -122,7 +134,6 @@ const Checkout = () => {
                 />
               )}
 
-              {/* Card Fields */}
               {form.onlineMethod === "Card" && (
                 <>
                   <input
@@ -159,8 +170,7 @@ const Checkout = () => {
                 {item.name} × {item.qty}
               </span>
               <span>
-                $
-                {Number(item.price.replace("$", "")) * item.qty}
+                ${Number(item.price.replace("$", "")) * item.qty}
               </span>
             </div>
           ))}
