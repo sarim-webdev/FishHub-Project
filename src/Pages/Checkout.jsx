@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useCart } from "../Context/CartContext";
-import { FaCreditCard, FaMobileAlt } from "react-icons/fa";
+import { FaCreditCard } from "react-icons/fa";
+import JazzCashLogo from "../assets/jazzcash-image.jpeg"; 
+import EasypaisaLogo from "../assets/easypaise-image.jpeg"; 
 
 const Checkout = () => {
   const { cart, total, clearCart } = useCart();
@@ -72,7 +74,6 @@ const Checkout = () => {
           <input name="city" placeholder="City" onChange={handleChange} />
 
           <h3>Payment Method</h3>
-
           <div className="payment">
             <label>
               <input
@@ -105,7 +106,7 @@ const Checkout = () => {
                   className={`online-card ${form.onlineMethod === "JazzCash" ? "active" : ""}`}
                   onClick={() => selectOnlineMethod("JazzCash")}
                 >
-                  <FaMobileAlt size={30} color="#ff3d00" />
+                  <img src={JazzCashLogo} alt="JazzCash" style={{ width: 40, height: 40 }} />
                   <span>JazzCash</span>
                 </div>
 
@@ -113,7 +114,7 @@ const Checkout = () => {
                   className={`online-card ${form.onlineMethod === "Easypaisa" ? "active" : ""}`}
                   onClick={() => selectOnlineMethod("Easypaisa")}
                 >
-                  <FaMobileAlt size={30} color="#00c853" />
+                  <img src={EasypaisaLogo} alt="Easypaisa" style={{ width: 40, height: 40 }} />
                   <span>Easypaisa</span>
                 </div>
 
@@ -163,18 +164,14 @@ const Checkout = () => {
 
         <div className="order-summary">
           <h2>Order Summary</h2>
-
           {cart.map((item, i) => (
             <div key={i} className="summary-item">
               <span>
                 {item.name} × {item.qty}
               </span>
-              <span>
-                ${Number(item.price.replace("$", "")) * item.qty}
-              </span>
+              <span>${Number(item.price.replace("$", "")) * item.qty}</span>
             </div>
           ))}
-
           <h3>Total Price: ${total}</h3>
         </div>
       </div>
